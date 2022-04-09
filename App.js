@@ -6,6 +6,9 @@ import { colors } from './utils/colors'
 
 import WeatherInfo from './components/WeatherInfo';
 import UnitsPicker from './components/UnitsPicker'
+import ReloadIcon from './components/Reload';
+import WeatherDetails from './components/WeatherDetails';
+import OtherWeatherDetails from './components/OtherWeatherDetails';
 
 const WEATHER_API_KEY = 'ff4c63f6688143ef10147b801d226551'
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
@@ -60,8 +63,13 @@ export default function App() {
     return (
       <View style={styles.container}>
         <View style={styles.main}>
-          <UnitsPicker unitsSystem={unitsSystem} setUnitsSystem={setUnitsSystem} />
+          <View style={styles.mainToggleWrapper}>
+            <UnitsPicker unitsSystem={unitsSystem} setUnitsSystem={setUnitsSystem} />
+            <ReloadIcon load={load} />
+          </View>
           <WeatherInfo currentWeather={currentWeather} />
+          <OtherWeatherDetails currentWeather={currentWeather} />
+          <WeatherDetails currentWeather={currentWeather} />
         </View>
         <StatusBar style='auto' />
       </View>
@@ -92,5 +100,12 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     justifyContent: 'center',
+  },
+  mainToggleWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 10,
+    margin: 'auto',
   }
 });

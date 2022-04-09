@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image } from 'react-native'
+import { Octicons } from '@expo/vector-icons';
 
 import { colors } from '../utils/colors'
 
@@ -15,7 +16,10 @@ function WeatherInfo({ currentWeather }) {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.city}>{name}</Text>
+            <View style={styles.cityContainer}>
+                <Text style={styles.city}>{name}</Text>
+                <Octicons name="location" size={20} color={colors.SECONDARY_COLOR} />
+            </View>
             <Image style={styles.icon} source={{ uri: iconUrl }} alt={icon} />
             <Text style={styles.temp}>{temp}°</Text>
             <Text style={styles.textMain}>{main}</Text>
@@ -27,26 +31,35 @@ function WeatherInfo({ currentWeather }) {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    cityContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     city: {
         color: 'black',
         fontSize: 24,
+        marginRight: 20,
     },
     icon: {
-        width: 150,
-        height: 150,
+        width: 100,
+        height: 100,
     },
     temp: {
         color: PRIMARY_COLOR,
-        fontSize: 45
+        fontWeight: '600',
+        fontSize: 35,
+        letterSpacing: 6
     },
     textMain: {
-        fontSize: 25,
+        fontSize: 22,
         color: SECONDARY_COLOR,
         fontWeight: '600',
-        margin: 5,
+        margin: 4,
         letterSpacing: 4,
     },
     textMainDescription: {

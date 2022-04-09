@@ -21,11 +21,11 @@ const styles = StyleSheet.create({
                 top: -20
             },
             android: {
-                top: 50,
+                top: 40,
             }
         }),
-        left: 20,
-        height: 50,
-        width: 100
+        left: 15,
+        height: 20,
+        width: 85
     },
 })
