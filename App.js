@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 import { useState, useEffect } from 'react'
 import * as Location from 'expo-location';
+import {WEATHER_API_KEY} from '@env'
+
 import { colors } from './utils/colors'
 
 import WeatherInfo from './components/WeatherInfo';
@@ -10,7 +12,6 @@ import ReloadIcon from './components/Reload';
 import WeatherDetails from './components/WeatherDetails';
 import OtherWeatherDetails from './components/OtherWeatherDetails';
 
-const WEATHER_API_KEY = 'ff4c63f6688143ef10147b801d226551'
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
 
 
