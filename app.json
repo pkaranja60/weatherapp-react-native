@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "weatherapp-react-native",
+    "name": "Cheki Weather",
     "slug": "weatherapp-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -20,11 +20,11 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.weatherapp.chekiweather",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.peterkaranja60.weatherapp"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

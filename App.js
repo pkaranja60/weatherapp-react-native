@@ -54,8 +54,6 @@ export default function App() {
         setErrorMessage(result.message)
       }
 
-      // alert(`Latitude: ${latitude}, Longitude: ${longitude}`)
-
     } catch (error) {
       setErrorMessage(error.message)
     }
